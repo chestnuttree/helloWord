@@ -1,13 +1,51 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>声纹库系统</title>
-  <base href="/">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-  wrgfreg
-</body>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	
+	<style type="text/css">
+		#barrageInfo{
+			margin:20px auto;
+			position: relative;	
+			padding-top: 10px;
+			width: 1100px;
+			height: 40px;
+			border:1px solid #CCC;
+		    font-size: 16px;
+		    white-space:nowrap;
+		    overflow: hidden;
+		}
+		#barrageInfo>div {
+			position: absolute;
+			right: -1000px;
+		}
+	</style>
+	<body>
+		<div id="barrageInfo">
+			<div>
+				<span></span>
+			</div>		
+		</div>
+		<script type="text/javascript">
+			var speed = 0, infoWidth=0;
+            //文字移动
+			function barrageAnimate(){
+				$("#barrageInfo>div").css("right",'-'+infoWidth+'px');  
+				$("#barrageInfo>div").animate({
+					right:'1100px',
+				},speed,'linear')
+			}
+			//文字获取饼循环滚动
+			function getBarrage(){
+				$("#barrageInfo span").html("绝对是的空间")
+				speed = 1000*document.body.clientWidth/80;	
+				infoWidth = $("#barrageInfo span").width();
+	            barrageAnimate();
+				setInterval(barrageAnimate,speed+2000);
+			}
+		</script>
+	</body>
 </html>
