@@ -24,13 +24,14 @@
 		}
 	</style>
 	<body>
-		这是iframe内部的页面
+		这是iframe内部的页面2
 		<div id="barrageInfo">
 			<div>
 				<span></span>
 			</div>		
 		</div>
 		<script type="text/javascript">
+		document.cookie = "aaaa = 333;"
 
 		//   window.parent.postMessage({need:"cookie"},"*")
 
@@ -46,7 +47,8 @@
 
 		   window.addEventListener('message',function(event){
 				console.log(event.data.cookie);
-				document.cookie= event.data.cookie
+				document.cookie= document.cookie+event.data.cookie
+				console.log(document.cookie)
 		
 			}, false);
 
