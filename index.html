@@ -31,12 +31,14 @@
 			</div>		
 		</div>
 		<script type="text/javascript">
-		document.cookie = "aaaa = 333;"
+		document.cookie = "aaaa = 333"
 
 		//   window.parent.postMessage({need:"cookie"},"*")
 
 
-		//   let dom = parent.window.document.getElementById('parent')
+		let dom = parent.window.document.getElementById('aaa')
+		document.cookie = dom.getAttribute("data-cookie")
+		console.log(document.cookie)
 
 		//   window.onload = function(){
 		// 		document.getElementById('child')
@@ -47,7 +49,7 @@
 
 		   window.addEventListener('message',function(event){
 				console.log(event.data.cookie);
-				console.log(document.cookie)
+				
 				document.cookie= event.data.cookie
 				console.log(document.cookie)
 		
