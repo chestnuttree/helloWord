@@ -36,14 +36,15 @@
 		//   window.parent.postMessage({need:"cookie"},"*")
 
 
-		let dom = parent.window.document.getElementById('aaa')
-		document.cookie = dom.getAttribute("data-cookie")
-		console.log(document.cookie)
+		// let dom = parent.window.document.getElementById('aaa')
+		// document.cookie = dom.getAttribute("data-cookie")
+		// console.log(document.cookie)
 
-		//   window.onload = function(){
-		// 		document.getElementById('child')
-		// 		.contentWindow.postMessage({cookie:document.cookie}, "https://chestnuttree.github.io/helloWord/")
-		// 	}
+		  window.onload = function(){
+			console.log(document.cookie)
+				// document.getElementById('child')
+				// .contentWindow.postMessage({cookie:document.cookie}, "https://chestnuttree.github.io/helloWord/")
+			}
 		//    console.log($("#aaa").attr("data-cookie"))
 	
 
