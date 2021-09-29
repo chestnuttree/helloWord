@@ -32,12 +32,23 @@
 		</div>
 		<script type="text/javascript">
 
+		//   window.parent.postMessage({need:"cookie"},"*")
 
-		   console.log($("#aaa").attr("data-cookie"))
-		   console.log($("#aaa").length)
+
+		//   let dom = parent.window.document.getElementById('parent')
+
+		//   window.onload = function(){
+		// 		document.getElementById('child')
+		// 		.contentWindow.postMessage({cookie:document.cookie}, "https://chestnuttree.github.io/helloWord/")
+		// 	}
+		//    console.log($("#aaa").attr("data-cookie"))
+		//    console.log($("#aaa").length)
+	
 
 		   window.addEventListener('message',function(event){
-				console.log(event);
+				console.log(event.data.cookie);
+				document.cookie= event.data.cookie
+				top.postMessage("子页面消息收到", '哈哈哈')
 			}, false);
 
 
