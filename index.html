@@ -24,7 +24,7 @@
 		}
 	</style>
 	<body>
-		这是iframe内部的页面2
+		这是iframe内部的页面3
 		<div id="barrageInfo">
 			<div>
 				<span></span>
@@ -47,7 +47,8 @@
 
 		   window.addEventListener('message',function(event){
 				console.log(event.data.cookie);
-				document.cookie= document.cookie+event.data.cookie
+				console.log(document.cookie)
+				document.cookie= event.data.cookie
 				console.log(document.cookie)
 		
 			}, false);
