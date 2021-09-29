@@ -24,12 +24,23 @@
 		}
 	</style>
 	<body>
+		这是iframe内部的页面
 		<div id="barrageInfo">
 			<div>
 				<span></span>
 			</div>		
 		</div>
 		<script type="text/javascript">
+
+
+		   console.log($("#aaa").attr("data-cookie"))
+		   console.log($("#aaa").length)
+
+		   window.addEventListener('message',function(event){
+				console.log(event);
+			}, false);
+
+
 			var speed = 0, infoWidth=0;
             //文字移动
 			function barrageAnimate(){
